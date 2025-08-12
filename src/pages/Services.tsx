@@ -1,4 +1,4 @@
-// import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
@@ -15,6 +15,7 @@ import {
 import ContactForm from "@/components/ContactForm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 
 const Services = () => {
   const services = [
@@ -93,18 +94,19 @@ const Services = () => {
       <div className="min-h-screen bg-background font-inter">
         <Header />
 
-        {/* Services Hero */}
-        <section className="bg-gradient-to-br from-tegasi-navy to-blue-900 text-white py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-3xl md:text-4xl font-bold font-poppins mb-4">
-              Our Security Services
-            </h1>
-            <p className="text-lg text-blue-100 max-w-2xl mx-auto leading-relaxed">
-              Professional security installations and maintenance for homes and businesses 
-              across Port Harcourt and Rivers State.
-            </p>
-          </div>
-        </section>
+        <Hero
+          backgroundImage="/lovable-uploads/34e746bd-fa8f-4c66-a8a6-dff36243a852.png"
+          title="Our Security Services"
+          subtitle="Professional security installations and maintenance for homes and businesses across Port Harcourt and Rivers State."
+          primaryCta={{
+            label: "WhatsApp for Quote",
+            href: "https://wa.me/2347037581741?text=Hello, I need a quote for security services"
+          }}
+          secondaryCta={{
+            label: "Request Form",
+            href: "#request-quote"
+          }}
+        />
 
         {/* Service Details */}
         <section className="py-16">
@@ -247,7 +249,7 @@ const Services = () => {
         </section>
 
         {/* Request Quote Form */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50" id="request-quote">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-8">
