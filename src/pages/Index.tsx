@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
@@ -15,6 +16,7 @@ import { Link } from "react-router-dom";
 import ContactForm from "@/components/ContactForm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 
 const Index = () => {
   const services = [
@@ -78,51 +80,29 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background font-inter">
       <Header />
+      <Helmet>
+        <title>Tegasi Security | CCTV, Alarms, Access Control in Port Harcourt</title>
+        <meta name="description" content="Professional CCTV, access control and alarm systems installed and serviced in Port Harcourt. Fast local response." />
+        <meta property="og:title" content="Tegasi Security | CCTV, Alarms, Access Control" />
+        <meta property="og:description" content="Security installations for homes and businesses in Port Harcourt and Rivers State." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="/" />
+      </Helmet>
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-tegasi-navy via-blue-900 to-blue-800 text-white py-20 lg:py-28">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-poppins leading-tight mb-6">
-                Protect Your Home & Office <span className="text-blue-200">24/7</span>
-              </h1>
-              <p className="text-lg md:text-xl text-blue-100 leading-relaxed mb-8 max-w-xl">
-                Professional CCTV, access control and alarm systems installed and serviced in Port Harcourt. Fast local response.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild variant="hero" size="xl">
-                  <a 
-                    href="https://wa.me/2347037581741?text=Hello, I need a security quote for my property"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center"
-                  >
-                    <MessageCircle className="h-5 w-5 mr-2" />
-                    WhatsApp for Quote
-                  </a>
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="xl"
-                  onClick={scrollToServices}
-                  className="border-white text-white hover:bg-white hover:text-tegasi-navy"
-                >
-                  View Services
-                  <ChevronRight className="h-5 w-5 ml-2" />
-                </Button>
-              </div>
-            </div>
-            <div className="lg:order-2">
-              <img 
-                src="/lovable-uploads/0fd78f6f-e587-4146-8c79-0a19eca71203.png"
-                alt="Professional security system installation by Tegasi Security in Port Harcourt"
-                className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-lg shadow-2xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section - modern blue layout */}
+      <Hero
+        backgroundImage="/lovable-uploads/0fd78f6f-e587-4146-8c79-0a19eca71203.png"
+        title="Protect Your Home & Office 24/7"
+        subtitle="Professional CCTV, access control and alarm systems installed and serviced in Port Harcourt. Fast local response."
+        primaryCta={{
+          label: "WhatsApp for Quote",
+          href: "https://wa.me/2347037581741?text=Hello, I need a security quote for my property"
+        }}
+        secondaryCta={{
+          label: "View Services",
+          onClick: scrollToServices
+        }}
+      />
 
       {/* Trust Strip */}
       <section className="bg-white py-6 border-b">

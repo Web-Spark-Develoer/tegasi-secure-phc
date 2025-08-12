@@ -1,4 +1,5 @@
-import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -53,18 +54,31 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 font-poppins">Follow Us</h3>
             <div className="flex space-x-4 mb-6">
               <a 
-                href="#" 
+                href="https://www.facebook.com/tegasisecurititech/" 
                 className="text-gray-300 hover:text-white transition-colors"
                 aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Facebook className="h-6 w-6" />
+                <FaFacebook className="h-6 w-6" />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/tegasisecurititech?igsh=eHNodnlhbTc2MGhj" 
                 className="text-gray-300 hover:text-white transition-colors"
                 aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Instagram className="h-6 w-6" />
+                <FaInstagram className="h-6 w-6" />
+              </a>
+              <a 
+                href="https://wa.me/2347037581741" 
+                className="text-gray-300 hover:text-white transition-colors"
+                aria-label="WhatsApp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp className="h-6 w-6" />
               </a>
             </div>
             <div className="space-y-2">
